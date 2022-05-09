@@ -1,12 +1,15 @@
 package com.nowcoder.community.util;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.DigestUtils;
 
-import java.nio.charset.StandardCharsets;
+
+
 import java.util.Map;
 import java.util.UUID;
+
 
 public class CommunityUtil {
 
@@ -26,15 +29,15 @@ public class CommunityUtil {
 
     //封装json工具
     public static String getJSONString(int code, String msg, Map<String,Object> map){
-        JSONObject jsonObject=new JSONObject();
-        jsonObject.put("code",code);
-        jsonObject.put("msg",msg);
+        JSONObject json = new JSONObject();
+        json.put("code",code);
+        json.put("msg",msg);
         if(map != null){
             for(String key : map.keySet()){
-                jsonObject.put(key,map.get(key));
+                json.put(key,map.get(key));
             }
         }
-        return jsonObject.toJSONString();
+        return json.toJSONString();
     }
 
     //重载json工具
@@ -46,5 +49,6 @@ public class CommunityUtil {
     public static String getJSONString(int code){
         return getJSONString(code,null,null);
     }
+
 
 }

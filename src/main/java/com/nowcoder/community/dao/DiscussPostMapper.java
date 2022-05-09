@@ -14,4 +14,6 @@ public interface DiscussPostMapper {
     // @Param注解用于给参数取别名，若只有一个参数并且在<if>中使用，则必须加别名
     int selectDiscussPostRows(@Param("userId") int userId);
 
+    int insertDiscussPost(DiscussPost discussPost);
+
 }
