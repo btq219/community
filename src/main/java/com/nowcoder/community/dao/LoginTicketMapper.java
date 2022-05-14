@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 @Mapper
+@Deprecated //不推荐使用
 public interface LoginTicketMapper {
 
     @Insert({
